@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&display=swap');
+
+:root {
+    --lexend: "Lexend", sans-serif; /* 400 */
+    --inter: "Inter", sans-serif; /* 400 700 */
+    /* colors */
+    --main-bg: hsl(233, 47%, 7%);
+    --card-bg: hsl(244, 38%, 16%);
+    --accent-violet: hsl(277, 64%, 61%);
+    --headings: hsl(0, 0%, 100%);
+    --slighty-main-p: hsla(0, 0%, 100%, 0.75);
+    --slightly-stat-heading: hsla(0, 0%, 100%, 0.6);
+    --size: 15px;
+}
+
+*, *::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--size);
+}
+
+body {
+    background-color: var(--main-bg);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+}
+
+.text-content {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-content .title {
+    font-size: 2.5rem;
+    font-family: var(--inter);
+    font-weight: 700;
+}
+
+.text-content .sub {
+    margin-top: 30px;
+    font-family: var(--lexend);
+    font-weight: 400;
+    color: var(--slighty-main-p);
+    line-height: 1.9;
+    margin-right: 3rem;
+}
+
+.title .span {
+    color: var(--accent-violet);
+}
+
+.stats {
+    margin-top: 5rem;
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+.stats div h1 {
+    font-family: var(--inter);
+    margin-bottom: 4px;
+}
+
+.stats div p {
+    font-family: var(--inter);
+    color: var(--slightly-stat-heading);
+    letter-spacing: 1px;
+}
+
+.img-content {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url(./images/image-header-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--accent-violet);
+    background-blend-mode: multiply;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+@media screen and (max-width: 992px) {    
+    .main {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 450px;
+        height: 850px;
+    }
+
+    .img-content {
+        height: 100%;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 0px;
+        background-size: cover 100%;
+    }
+
+    .text-content {
+        text-align: center;
+        padding: 2rem 0rem;
+        max-width: 90%;
+    }
+
+   .text-content .sub {
+        margin-top: 15px;
+        margin-right: 0rem;
+        padding: 0px 10px;
+   }
+
+    .stats {
+        width: 100%;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .main {
+        margin: 10px;
+        height: 770px;
+    }
+
+    .text-content .title {
+        font-size: 1.8rem;
+    }
+
+    .text-content .sub {
+        padding: 0;
+        line-height: 1.8;
+    }
+
+    
+
+}
+
+
+
+
+
